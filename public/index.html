@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- GOOGLE FONT POPPINS-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- GOOGLE FONTS LATO -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- GOOGLE FONT OPEN SANS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- GOOGLE FONT LEAGUE SPARTAN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- FONTAWESOME -->
+  <script src="https://kit.fontawesome.com/e3e67fe18b.js" crossorigin="anonymous"></script>
+  <!-- <script src="https://use.fontawesome.com/397dd08f67.js"></script> -->
+
+  <!-- BOXICONS -->
+  <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+
+
+  <!-- Main Quill library -->
+  <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+  <!-- Theme included stylesheets -->
+  <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .ql-toolbar {
+      border-radius: 25px;
+      border: 0px !important;
+    }
+
+    .ql-container {
+      border-top: 1px solid lightgray !important;
+      border-radius: 5px;
+    }
+  </style>
+
+  <script src="app.js"></script>
+  <title>Trexnotes</title>
+</head>
+
+<body class="debug-screens bg-gray-100 flex antialiased">
+
+  <!-- SIDEBAR -->
+  <div class="w-64 p-6 space-y-6 h-screen bg-white flex-shrink-0">
+
+    <div class="mt-3 ml-3 mb-8 flex items-center space-x-3 pb-8">
+      <!-- <img src="/public/images/trextel.jpeg" class="rounded w-10 h-10 shadow-md"> -->
+      <h3 class=" text-2xl font-bold font-League-Spartan text-[#81C240]">Noteboard</h3>
+    </div>
+
+    <nav>
+      <!-- <p class="font-League-Spartan p-2 text-[#81C240]">Menu</p> -->
+      <div class="mt-4 flex justify-between items-center w-full p-2 hover:bg-gray-200 hover:text-gray-800 rounded-lg">
+
+        <div class="flex items-center space-x-3">
+          <box-icon name='stats' color="#55626c"></box-icon>
+          <span
+            class=" hover:bg-gray-200 rounded-lg font-League-Spartan text-lg text-[#55626c] hover:text-gray-800">Notifications</span>
+        </div>
+        <box-icon name='chevron-down' class="transition duration-300 -rotate-90 chev" id="menuBtn">
+        </box-icon>
+      </div>
+
+      <ul class="ml-9 hidden flex-col" id="dropDown">
+        <li class="p-2 hover:bg-gray-200 rounded-lg font-League-Spartan text-lg text-[#55626c] hover:text-gray-800">
+          <a href=" #"></a>Intellitrex
+        </li>
+        <li class="p-2 hover:bg-gray-200 rounded-lg font-League-Spartan text-lg text-[#55626c] hover:text-gray-800 ">
+          <a href=" #"></a>Netcloud
+        </li>
+        <li class="p-2 hover:bg-gray-200 rounded-lg font-League-Spartan text-lg text-[#55626c] hover:text-gray-800 ">
+          <a href=" #"></a>Armt
+        </li>
+        <li class="p-2 hover:bg-gray-200 rounded-lg font-League-Spartan text-lg text-[#55626c] hover:text-gray-800 ">
+          <a href=" #"></a>Aview
+        </li>
+      </ul>
+    </nav>
+
+    <nav>
+      <div class="flex justify-between items-center w-full p-2 hover:bg-gray-200 rounded-lg">
+        <div class="flex items-center space-x-3">
+          <box-icon name='comment-dots' color="#55626c"></box-icon>
+          <span class="text-gray-600 leading-7 antialiased font-League-Spartan text-lg">Collaboration</span>
+        </div>
+        <box-icon name='chevron-down' class="transition duration-300 -rotate-90 chev2" id="menuBtn2">
+        </box-icon>
+      </div>
+      <ul class="ml-9 hidden flex-col" id="dropDown2">
+        <li class="p-2 hover:bg-gray-200 rounded-lg font-Poppins font-medium text-[#55626c] hover:text-gray-800"><a
+            href="#"></a>Zendesk</li>
+        <li class="p-2 hover:bg-gray-200 rounded-lg font-Poppins font-medium text-[#55626c] hover:text-gray-800"><a
+            href="#"></a>Quickbase</li>
+        <li class="p-2 hover:bg-gray-200 rounded-lg font-Poppins font-medium text-[#55626c] hover:text-gray-800"><a
+            href="#"></a>Work Market</li>
+      </ul>
+    </nav>
+
+    <nav>
+      <div class="flex justify-between items-center w-full p-2 hover:bg-gray-200 rounded-lg">
+        <div class="flex items-center space-x-3">
+          <box-icon name='cog' color="#55626c"></box-icon>
+          <span class="text-gray-600 leading-7 antialiased font-League-Spartan text-lg">Configuration</span>
+        </div>
+        <box-icon name='chevron-down' class="transition duration-300 -rotate-90 chev3" id="menuBtn3">
+        </box-icon>
+
+      </div>
+      <ul class="ml-9 hidden flex-col" id="dropDown3">
+        <li class="p-2 hover:bg-gray-200 rounded-lg font-Poppins font-medium text-[#55626c]  hover:text-gray-800"><a
+            href="#"></a>ACS</li>
+        <li class="p-2 hover:bg-gray-200 rounded-lg font-Poppins font-medium text-[#55626c] hover:text-gray-800"><a
+            href="#"></a>O&H</li>
+        <li class="p-2 hover:bg-gray-200 rounded-lg font-Poppins font-medium text-[#55626c] hover:text-gray-800"><a
+            href="#"></a>Mix Networks</li>
+        <li class="p-2 hover:bg-gray-200 rounded-lg font-Poppins font-medium text-[#55626c]  hover:text-gray-800"><a
+            href="#"></a>My Fax Central</li>
+      </ul>
+    </nav>
+
+    <div class="flex items-center hover:bg-gray-200 rounded-lg p-2 space-x-3">
+      <box-icon name='file' color="#55626c"></box-icon>
+      <span class="text-gray-600 leading-7 antialiased font-League-Spartan text-lg"><a href="#"></a>Documentation</span>
+    </div>
+
+    <div class="mt-4 flex items-center hover:bg-gray-200 rounded-lg p-2 space-x-3">
+      <box-icon name='envelope' color='#55626c'></box-icon>
+      <span class="text-gray-600 leading-7 antialiased font-League-Spartan text-lg"><a href="#"></a>Email</span>
+    </div>
+
+
+  </div>
+
+  <!-- FIXME: -->
+  <!-- * MAIN SECTION -->
+
+  <main class="container h-screen p-8 mx-auto">
+
+    <!-- ** TOP NAV -->
+    <nav class="flex justify-between">
+      <h2 class="text-2xl font-semibold font-Poppins">My Dashboard</h2>
+      <div class="flex space-x-6 items-center relative">
+        <span class="font-Inter text-sm font-medium">14 February 2022</span>
+        <div class="bg-white rounded-full w-9 h-9 flex items-center justify-center relative shadow-sm">
+          <div class="absolute top-0 right-0 rounded-full h-3 w-1/3 bg-green-400 animate-pulse"></div>
+          <box-icon name='cart' color='#1f2937'></box-icon>
+        </div>
+        <img src="../public/images/avatar.png" class="rounded-full w-9 h-9" alt="">
+      </div>
+    </nav>
+
+
+    <!--** MAIN CONTAINER -->
+
+    <div class="grid xl:grid-cols-2 2xl:grid-cols-3 mt-8 gap-8">
+
+      <!--*** CARD 1 -->
+      <div class="bg-white rounded-lg p-12">
+        <h3 class="mb-8 text-xl font-League-Spartan font-semibold antialiased">Site Information</h3>
+        <form action="" class="space-y-6">
+          <div>
+            <label for="" class="block text-base font-medium text-gray-700 font-League-Spartan">Time in</label>
+            <input type="text" name="" id=""
+              class="mt-1 p-3 box-border flex justify-between items-center rounded h-[44px] w-full border-2 border-gray-200 focus:ring-2 font-Inter">
+          </div>
+          <div>
+            <label for="" class=" block text-base font-medium text-gray-700 font-League-Spartan">Site id</label>
+            <input type="text" name="" id=""
+              class="mt-1 p-3 box-border flex justify-between items-center rounded h-[44px] w-full border-2 border-gray-200 focus:ring-2 font-Inter">
+          </div>
+          <div>
+            <label for="" class=" block text-base font-medium text-gray-700 font-League-Spartan">Zendesk id</label>
+            <input type="text" name="" id=""
+              class="mt-1 p-3 box-border flex justify-between items-center rounded h-[44px] w-full border-2 border-gray-200 focus:ring-2 font-Inter">
+          </div>
+          <div>
+          </div>
+        </form>
+      </div>
+
+      <!--*** CARD 2 -->
+      <div class="bg-white rounded-lg p-12">
+        <h3 class="mb-8 text-lg font-semibold font-Poppins">Scope Information</h3>
+        <form action="" class="space-y-6">
+          <!-- TECHICIAN -->
+          <div>
+            <label for="" class=" block text-sm font-medium text-gray-700 font-Poppins">Technician</label>
+            <input type="text" name="" id=""
+              class="mt-1 p-3 box-border flex justify-between items-center rounded h-[44px] w-full border-2 border-gray-200 focus:ring-2 font-Poppins">
+          </div>
+
+          <!-- SCOPE SELECTION -->
+          <div class="selector2 w-full rounded relative z-40">
+            <label for="" class=" block text-sm font-medium text-gray-700 font-Poppins">Scope of work</label>
+            <div id="selectField2" tabindex='1'
+              class="mt-1 p-3 box-border flex justify-between items-center rounded h-[44px] w-full border-2 border-gray-200 focus:ring-2 font-Poppins ">
+              <p id="selectText2" class="font-Poppins text-sm"></p>
+              <box-icon name='chevron-down' class=" cursor-pointer transform transition duration-300 ease-in-out"
+                id="arrow2"></box-icon>
+            </div>
+            <ul
+              class="absolute bg-white w-full mt-1 p-3 space-y-3 shadow-lg rounded-lg box-border hidden border overflow-y-auto h-60"
+              id="list2">
+              <li class="options2 hover:bg-gray-200 p-3 rounded font-Poppins">Wilson Pro install</li>
+              <li class="options2 hover:bg-gray-200 p-3 rounded font-Poppins">Yagi install</li>
+              <li class="options2 hover:bg-gray-200 p-3 rounded font-Poppins">Cradle Point install</li>
+              <li class="options2 hover:bg-gray-200 p-3 rounded font-Poppins">Port 4 fax issue</li>
+              <li class="options2 hover:bg-gray-200 p-3 rounded font-Poppins">PRD install</li>
+              <li class="options2 hover:bg-gray-200 p-3 rounded font-Poppins">Primary down</li>
+              <li class="options2 hover:bg-gray-200 p-3 rounded font-Poppins">Site on backup</li>
+              <li class="options2 hover:bg-gray-200 p-3 rounded font-Poppins">Wendys modem down</li>
+              <li class="options2 hover:bg-gray-200 p-3 rounded font-Poppins">Lowes modem down</li>
+              <li class="options2 hover:bg-gray-200 p-3 rounded font-Poppins">Bring site to primary</li>
+            </ul>
+          </div>
+
+          <!-- PROJECT SELECTION -->
+          <div class="selector w-full rounded relative z-30">
+            <label for="" class=" block text-sm font-medium text-gray-700 font-Poppins">Project</label>
+            <div id="selectField" tabindex='1'
+              class="mt-1 p-3 box-border flex justify-between items-center rounded h-[44px] w-full border-2 border-gray-200 focus:ring-2 font-Poppins">
+              <p id="selectText" class="font-Poppins text-sm"></p>
+              <box-icon name='chevron-down' class=" cursor-pointer transform transition duration-300 ease-in-out"
+                id="arrow"></box-icon>
+            </div>
+            <ul class="absolute bg-white w-full mt-1 p-3 space-y-3 shadow-lg rounded-lg box-border hidden border"
+              id="list">
+              <li class="options hover:bg-gray-200 p-3 rounded font-Poppins">Luxottica</li>
+              <li class="options hover:bg-gray-200 p-3 rounded font-Poppins">Family Dollar</li>
+              <li class="options hover:bg-gray-200 p-3 rounded font-Poppins">Dollar Tree</li>
+              <li class="options hover:bg-gray-200 p-3 rounded font-Poppins">Tailored Brands</li>
+              <li class="options hover:bg-gray-200 p-3 rounded font-Poppins">Lowes</li>
+              <li class="options hover:bg-gray-200 p-3 rounded font-Poppins">Bass Pro</li>
+            </ul>
+          </div>
+        </form>
+      </div>
+
+      <!--*** CARD 3 -->
+      <div class="bg-white rounded-lg p-12">
+        <h3 class="mb-8 text-lg font-semibold font-Poppins">General Information</h3>
+        <form action="" class="space-y-6">
+          <div>
+            <label for="" class=" block text-sm font-medium text-gray-700 font-Poppins">Case number</label>
+            <input type="text" name="" id=""
+              class="mt-1 p-3 box-border flex justify-between items-center rounded h-[44px] w-full border-2 border-gray-200 focus:ring-2 font-Inter">
+          </div>
+          <div>
+            <label for="" class=" block text-sm font-medium text-gray-700 font-Poppins">Manager</label>
+            <input type="text" name="" id=""
+              class="mt-1 p-3 box-border flex justify-between items-center rounded h-[44px] w-full border-2 border-gray-200 focus:ring-2 font-Inter">
+          </div>
+          <div>
+            <label for="" class=" block text-sm font-medium text-gray-700 font-Poppins">Time out</label>
+            <input type="text" name="" id=""
+              class="mt-1 p-3 box-border flex justify-between items-center rounded h-[44px] w-full border-2 border-gray-200 focus:ring-2 font-Inter">
+          </div>
+          <div>
+          </div>
+        </form>
+      </div>
+
+      <!--*** CARD 4 -->
+      <div class="bg-white rounded-lg p-12">
+
+        <div class="flex items-center justify-between mb-8">
+          <h3 class="text-lg font-semibold font-Poppins">Templates</h3>
+        </div>
+
+        <section>
+          <div class="flex justify-between">
+            <div class="flex items-center space-x-3">
+              <img src="../public/images/familydollar.jpeg" class="w-10 h-10" alt="">
+              <h3 class=" font-Inter text-sm font-medium">Family Dollar</h3>
+            </div>
+            <button class="border border-green-400 py-2 px-6 rounded font-semibold text-sm modalBtn">Launch</button>
+          </div>
+        </section>
+      </div>
+
+      <!--*** CARD 5 -->
+      <div class=" modalBg fixed top-0 left-0 w-full h-screen bg-black-rgba justify-center items-center hidden z-50">
+        <div class=" modal bg-white w-1/2 rounded-lg shadow-lg">
+          <div class="flex justify-between p-8 border-b items-center">
+            <h2 class="font-semibold text-2xl">Family Dollar Template</h2>
+            <i class="fa fa-lg fa-times modalClose font-inter text-gray-500" aria-hidden="true"></i>
+          </div>
+          <div class="ml-8 box py-8 font-inter font-medium text-gray-600 relative">
+            1. Is the 6310 online?<br>
+            Did you record the signal metrics?<br>
+            Did you capture screenshots?<br>
+            2. Is the U110/U115 online?<br>
+            Did you record the signal metrics?<br>
+            Did you capture screenshots?<br>
+            3. Is the site on primary?<br>
+            Did you capture screenshots?<br>
+            4. Are the phones working?<br>
+            Did you complete an inbound/outbound test call?<br>
+            5. Can the MOD successfully complete debit/credit card transaction?<br>
+            6. Can the MOD access the company portal on the desktop computer?<br>
+            7. What's the MOD's name that confirm the store is fully operational?<br>
+            8. Did you contact the customer HD to check-out and confirm scope of work completed?<br>
+            Did you obtain the reps name you spoke with at the HD?<br>
+          </div>
+          <div class="flex justify-end border-t p-3">
+            <button
+              class="px-6 py-2 bg-green-600 hover:bg-green-500 text-white rounded font-medium btn-copy">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- *** CARD 6 -->
+      <div class="bg-white rounded-lg p-12 grid col-span-2 z-20">
+        <div class="text-lg font-semibold font-Poppins">Troubleshooting</div>
+        <!-- BUTTON CONTROLS -->
+        <div id="toolbar" class="mt-8"></div>
+        <div id="editor" class="h-[300px] text-xl font-League-Spartan">
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+  <script>
+    var toolbarOptions = [
+      ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+      ['blockquote', 'code-block'],
+
+
+      [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+
+      // [{ 'script': 'sub' }, { 'script': 'super' }],      // superscript/subscript
+      [{ 'indent': '-1' }, { 'indent': '+1' }],          // outdent/indent
+      // [{ 'direction': 'rtl' }],                         // text direction
+
+      [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown 
+
+      [{ 'color': [] }, { 'background': [] }],
+      ['link', 'image'],      // dropdown with defaults from theme
+
+      [{ 'align': [] }],
+
+      ['clean']                                         // remove formatting button
+    ];
+
+    var editor = new Quill('#editor', {
+      modules: {
+        toolbar: toolbarOptions
+      },
+
+      theme: 'snow'
+    });
+
+  </script>
+
+
+</body>
+
+</html>
